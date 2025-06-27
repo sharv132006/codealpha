@@ -1,0 +1,37 @@
+# Stock Portfolio Tracker - Task 2 Solution
+
+# Sample stock data: stock_name : [shares, buy_price, current_price]
+stocks = {
+    "IRFC": [20, 85.0, 108.5],
+    "BEL": [10, 150.0, 220.0],
+    "TATASTEEL": [5, 130.0, 125.0]
+}
+
+total_investment = 0
+total_current = 0
+
+print("\n--- STOCK PORTFOLIO TRACKER ---\n")
+
+for stock, data in stocks.items():
+    shares, buy_price, current_price = data
+    investment = shares * buy_price
+    current_value = shares * current_price
+    profit = current_value - investment
+
+    print(f"{stock}")
+    print(f"  Shares: {shares}")
+    print(f"  Buy Price: ₹{buy_price}")
+    print(f"  Current Price: ₹{current_price}")
+    print(f"  Total Investment: ₹{investment}")
+    print(f"  Current Value: ₹{current_value}")
+    print(f"  Profit/Loss: ₹{profit:.2f}\n")
+
+    total_investment += investment
+    total_current += current_value
+
+overall_profit = total_current - total_investment
+
+print("--- SUMMARY ---")
+print(f"Total Investment: ₹{total_investment}")
+print(f"Current Value: ₹{total_current}")
+print(f"Overall Profit/Loss: ₹{overall_profit:.2f}")
